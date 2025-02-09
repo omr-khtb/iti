@@ -1,7 +1,7 @@
 class TvShow {
   final bool adult;
   //final String backdropPath;
-  final List<int> genreIds;
+  //final List<int> genreIds;
   final List<String> origincountry;
   final int id;
   final String originalLanguage;
@@ -17,7 +17,7 @@ class TvShow {
   TvShow(
       {required this.adult,
       //required this.backdropPath,
-      required this.genreIds,
+      //required this.genreIds,
       required this.origincountry,
       required this.id,
       required this.originalLanguage,
@@ -34,7 +34,7 @@ class TvShow {
   return TvShow(
    adult :json['adult'],
     //backdropPath :json['backdrop_path'],
-    genreIds : json['genre_ids'].cast<int>(),
+    //genreIds : json['genre_ids'].cast<int>(),
     origincountry :json['origin_country'].cast<String>(),
     id : json['id'],
     originalLanguage : json['original_language'],

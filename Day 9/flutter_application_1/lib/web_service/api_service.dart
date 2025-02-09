@@ -77,4 +77,18 @@ class ApiService {
       throw Exception('Error getting Data:$err');
     }
   }
+  
+  Future<TvShow> getEpsoidesById(int id) async {
+    try {
+      final response = await _dio.get(
+          'https://api.themoviedb.org/3/tv/$id?api_key=e9d830a02f5c47e82cdedbcc8318ca4d&');
+      if (response.statusCode == 200) {
+        return TvShow.fromJson(response.data);
+      }else{
+         throw Exception('Error  casting data');
+      }
+    } catch (err) {
+      throw Exception('Error getting Data:$err');
+    }
+  }
 }

@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:day_7/screens/product_details.dart';
+import 'package:day_7/screens/TV_details.dart';
 import 'package:day_7/web_service/api_service.dart';
 import 'package:day_7/model/movie.dart';
 import 'package:day_7/model/TvShow.dart';
@@ -81,7 +81,15 @@ class _TvShowslistpageState extends State<TvShowslistpage> {
             itemBuilder: (context, index) {
               final tv = snapshot.data![index];
               return GestureDetector(
-                onTap: () {},
+                onTap: () {            
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => TVDetailsScreen(
+                              TVId: tv.id,
+                            )),
+                  );
+                },
                 child: Card(
                   margin: EdgeInsets.symmetric(vertical: 6, horizontal: 10),
                   shape: RoundedRectangleBorder(
